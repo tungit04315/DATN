@@ -63,31 +63,38 @@
                                 Xin cảm ơn bạn đã quan tâm đến dịch vụ của chúng tôi. Để chúng tôi có thể hỗ trợ bạn tốt nhất, vui lòng nhập đầy đủ thông tin liên hệ và nội dung yêu cầu. Thông tin liên hệ bao gồm: Họ tên Số, Email, Tiêu đề, Nội dung yêu cầu. Chúng tôi sẽ phản hồi bạn
                                 trong thời gian sớm nhất. Trân trọng, Công ty bất động sản Fpoly Real Estate.
                             </p>
-                            <form>
+                            <form action="/home/contact-action" method="post" id="formContact">
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                            <input type="text" class="form-control" name="fullname" id="name" placeholder="Your Name" required>
                                             <label for="name">Họ và tên</label>
+                                            <span class="form-message item3" style="color: #ff0000; margin-top: 5px;"></span>
                                         </div>
+
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
                                             <label for="email">Email của bạn</label>
+                                            <span class="form-message item3" style="color: #ff0000; margin-top: 5px;"></span>
                                         </div>
+
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
                                             <label for="subject">Tiêu đề</label>
+                                            <span class="form-message item3" style="color: #ff0000; margin-top: 5px;"></span>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                            <textarea class="form-control" name="content" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
                                             <label for="message">Nội dung</label>
+                                            <span class="form-message item3" style="color: #ff0000; margin-top: 5px;"></span>
                                         </div>
+
                                     </div>
                                     <div class="col-12">
                                         <button class="btn btn-primary w-100 py-3" type="submit">Gửi tin nhắn</button>
@@ -98,6 +105,35 @@
                     </div>
                 </div>
             </div>
+            <!-- toast -->
+
+            <div class="toast active" th:if="${visible == 'true'}">
+                <div class="toast-content">
+                    <i class="fas fa-solid fa-check check"></i>
+                    <div class="message">
+                        <span class="text text-1" th:utext="${title}"></span>
+                        <span class="text text-2" th:utext="${notification}"></span>
+                    </div>
+                </div>
+                <i class="fa-solid fa-xmark close"></i>
+
+                <div class="progress active"></div>
+            </div>
+
+            <!-- toast -->
+            <script src="/js/validator.js"></script>
+            <script type="text/javascript">
+                Validator({
+                    form: '#formContact',
+                    errorSelector: '.form-message',
+                    rules: [
+                        Validator.isRequired('#name', 'Vui lòng nhập họ và tên'),
+                        Validator.isRequired('#email', 'Vui lòng nhập email'),
+                        Validator.isRequired('#subject', 'Vui lòng nhập tiêu đề'),
+                        Validator.isRequired('#message', 'Vui lòng nhập nội dung'),
+                    ]
+                });
+            </script>
         </div>
         <!-- Contact End -->
     </main>

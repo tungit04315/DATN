@@ -29,7 +29,7 @@
                             <td th:utext="${p.post_title}"></td>
                             <td th:utext="${p.users_id.username}"></td>
                             <td th:utext="${p.services_id.services_name}"></td>
-                            <td th:utext="${p.create_at}"></td>
+                            <td th:utext="${#dates.format(p.create_at, 'dd-MM-yyyy')}"></td>
                             <td class="d-flex">
                                 <a type="button" th:href="@{'/admin/post-find-update?id=' + ${p.post_id}}" class="btn btn-primary" style="width: 150px;">
                                     <i class="fa-solid fa-notes-medical"></i> Phục hồi

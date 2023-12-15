@@ -2785,6 +2785,17 @@ progress {
     color: #000000;
 }
 
+.form-control-post input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px #F8F1F1 solid;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    color: #000000;
+}
+
 .form-control-div input:focus,
 .form-control-div input:valid {
     outline: 0;
@@ -2808,12 +2819,24 @@ progress {
 }
 
 .form-control-div input:focus+label span,
+.form-control-div input:not(:placeholder-shown)+label span,
 .form-control-div input:valid+label span {
     color: #E8AA42;
     transform: translateY(-30px);
 }
 
 .form-control-div textarea {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px #F8F1F1 solid;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    color: #000000;
+}
+
+.form-control-post textarea {
     background-color: transparent;
     border: 0;
     border-bottom: 2px #F8F1F1 solid;
@@ -6052,7 +6075,7 @@ fieldset:disabled .btn {
     border: var(--bs-card-border-width) solid var(--bs-card-border-color);
     border-radius: var(--bs-card-border-radius);
     -webkit-box-shadow: var(--bs-card-box-shadow);
-    box-shadow: var(--bs-card-box-shadow)
+    box-shadow: var(--bs-card-box-shadow);
 }
 
 .card>hr {
@@ -7546,7 +7569,7 @@ fieldset:disabled .btn {
 }
 
 .toast:not(.show) {
-    display: none
+    display: none;
 }
 
 .toast-container {

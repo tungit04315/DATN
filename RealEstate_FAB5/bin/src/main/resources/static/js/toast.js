@@ -2,6 +2,7 @@ const toast = document.querySelector(".toast");
 const closeIcon = document.querySelector(".close");
 const progress = document.querySelector(".progress");
 
+const toastId = document.getElementById("toastUserAdmin");
 let timer1;
 
 // Hàm để ẩn toast và progress bar
