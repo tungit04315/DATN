@@ -358,7 +358,7 @@
                                     <div class="step">
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label">Chọn loại tin</label>
-                                            <input type="text" class="form-control" ng-model="post.services_id.services_name">
+                                            <input type="text" class="form-control" ng-model="post.services_id.services_name" readonly>
                                             <div class="row" hidden>
                                                 <div class="col-lg-3" ng-repeat="p in pack">
                                                     <div class="card w-100 p-3">
@@ -382,7 +382,7 @@
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label text-black">Thời gian đăng tin</label>
                                             <p>Số ngày đăng</p>
-                                            <input type="text" class="form-control" ng-model="post.end_date">
+                                            <input type="text" class="form-control" ng-model="post.end_date" readonly>
                                             <div class="row" hidden>
                                                 <div class="col-lg-4">
                                                     <input type="radio" class="btn-check" name="check-date" id="btn-check-outlined-two" ng-model="inputNumber" value="10" ng-click="endDate(10)" autocomplete="off" ng-checked="true">

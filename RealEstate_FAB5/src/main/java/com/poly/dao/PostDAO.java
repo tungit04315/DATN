@@ -51,10 +51,10 @@ public interface PostDAO extends JpaRepository<Post, Integer>{
 	@Query(value="select top 18 * from post where active = 1 and deleted_at = 0 and post_id not in (select post_id from post where post_id = ?1) order by post_id desc", nativeQuery = true)
 	public List<Post> getListTop18PostDesc(int post_id);
 	
-	@Query(value="select top 6 * from post where active = 'true' and deleted_at = 'false' and services_id = 2", nativeQuery = true)
+	@Query(value="select top 6 * from post where active = 'true' and deleted_at = 'false' and services_id = 2 order by post_id desc", nativeQuery = true)
 	public List<Post> getPostsDiamond();
 	
-	@Query(value="select top 6 * from post where active = 'true' and deleted_at = 'false' and services_id = 3", nativeQuery = true)
+	@Query(value="select top 6 * from post where active = 'true' and deleted_at = 'false' and services_id = 3 order by post_id desc", nativeQuery = true)
 	public List<Post> getPostsOften();
 	
 	@Query(value="select * from post where active = 'true' and deleted_at = 'false' and users_id = ?1", nativeQuery = true)
